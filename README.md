@@ -4,6 +4,7 @@ A concise overview of the end-to-end prescription order process in Epic Willow, 
 ## Table of Contents
 - [Overview](#overview)
 - [Definitions](#definitions)
+- [Sources of Prescription Order](#sources-of-prescription-order)
 - [Willow WorkQueues](#willow-workqueues)
 
 ## Overview
@@ -39,7 +40,20 @@ These are configurable rules within Epic that guide how and where medication ord
 - Routing can depend on factors such as encounter type (inpatient vs. ambulatory), formulary status, or whether the medication is controlled.
 - Ensure medications are routed to the correct pharmacy system (e.g., Omnicell, external retail pharmacy) based on clinical and operational needs.
 
-# Willow WorkQueues
+## Sources of Prescription Order
+1. **External Prescribers**: Electronic prescriptions sent from providers outside the organization using the Surescripts network. May show status like "Pending prescription entry" or "Patient not found". Requires manual patient matching and verification before processing.
+   
+2. **EpicCare Ambulatory/Inpatient**: Prescriptions written by internal Epic providers during ambulatory or inpatient visits. These will fall under "Flagged Prescriptions" tab in Hyperspace with a First Fill Review flag. These prescriptions will not proceed to fill until a pharmacist or technician reviews and removes the flag. Linked to Patient's encounter and clinical data in Epic.
+
+3. **Manual Entry by Pharmacy Staff**: Pharmacists or pharmacy technicians manually enter prescriptions based on verbal orders, written scripts, or phone calls, especially for controlled substances, verbal orders, or when e-prescription systems are unavailable.
+
+4. **Order Entry Through Interfaces** (3rd Party Systems): Interfaces with external clinical or prescribing systems integrated with Epic (e.g., hospital CPOE systems or retail pharmacy systems). May also trigger work queue items if mappings or patient matches are uncertain.
+
+5. **Renewals and Refills Requests**: Refill or renewal requests from patients (through MyChart) or providers. These must be approved or denied and may generate a new prescription.
+
+6. **Standing Orders / Protocols**: Automatically generated prescriptions based on care plans or protocols (e.g., vaccination schedules, discharge meds). Often requires pharmacist confirmation before fill.
+
+## Willow WorkQueues
 **Initial Review WQ**: Prescriptions entered in Hyperspace (in the clinic or hospital), reorders approved through Surescripts that need to be reviewed before filling, and certain refills requested by patients directly from MyChart or an IVR (interactive voice response).
 
 **Clinical Review WQ**: Prescriptions that have had first fill review but need to be reviewed by a pharmacist.

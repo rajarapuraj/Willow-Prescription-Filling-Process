@@ -23,3 +23,38 @@ Rx Routing is the logic within Epic that determines the route a prescription tak
 These are configurable rules within Epic that guide how and where medication orders are routed. 
 - Routing can depend on factors such as encounter type (inpatient vs. ambulatory), formulary status, or whether the medication is controlled.
 - Ensure medications are routed to the correct pharmacy system (e.g., Omnicell, external retail pharmacy) based on clinical and operational needs.
+
+# Willow WorkQueues
+**Initial Review WQ**: Prescriptions entered in Hyperspace (in the clinic or hospital), reorders approved through Surescripts that need to be reviewed before filling, and certain refills requested by patients directly from MyChart or an IVR (interactive voice response).
+
+**Clinical Review WQ**: Prescriptions that have had first fill review but need to be reviewed by a pharmacist.
+
+**DUR Reject WQ**: Prescriptions with drug utilization review (DUR) errors.
+
+**Refill Too Soon and PA Required WQ**: Prescriptions that either are being refilled too soon or require prior authorization.
+
+**Ready to Fill WQ**: Prescriptions that have had clinical review or refill review and are ready to be filled. Technicians manually print fill labels from this queue.
+
+**Waiting for Stock WQ**: Prescriptions for which there is either insufficient inventory or a completion fill hold.
+
+**Charging WQ**: Prescriptions with problems related to adjudication.
+
+**Expected Discharge for Pick-Up WQ**: Prescriptions for patients being discharged who are not part of the meds to beds program (a service where hospital patients receive their discharge medications and personalized medication counseling at their bedside before leaving the hospital, eliminating the need to stop at a pharmacy).
+
+**Ready to Verify WQ**: Filled prescriptions that need to be verified by a pharmacist.
+
+**Will Call WQ**: Verified prescriptions ready to be sold in person.
+
+**Waiting Patients WQ**: Patients physically waiting in the pharmacy for their prescriptions. Clicking on this queue opens the Waiting Patients list in Front Counter.
+
+**Pending Refill Approval WQ**: Prescriptions that have outstanding refill authorization requests.
+
+**All Pharmacist Work WQ**: Prescriptions that require a pharmacist to take the next action on them.
+
+**Everything WQ**: Any prescription in the process of being filled, as well as any prescriptions with refills requested and no refills remaining.
+
+**Everything for Me WQ**: Any prescription included in the Everything queue that you have the ability to act on in the system.
+
+**NOTE**: The standard work queues that appear on the homepage can vary depending on the user. The work queues that you see aren't necessarily the work queues that a technician sees.
+
+![Willow Prescription Filling Workflow] ("C:\Users\rrajarapu\OneDrive - Care Alliance\RAHUL\WILLOW\Willow_Prescription Fill WorkQueue.jpeg")

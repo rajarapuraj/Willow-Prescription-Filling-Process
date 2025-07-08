@@ -1,5 +1,5 @@
 # Willow-Prescription-Filling-Process
-A concise overview of the end-to-end prescription order process in Epic Willow, including order routing, work queue handling, and Omnicell integration. Designed for healthcare IT and pharmacy workflow optimization.
+It is a brief overview of the prescription order process in Epic Willow, including order routing, work queue handling, and Omnicell integration. Giving the basic terminologies and understanding the workflow. 
 
 ## Table of Contents
 - [Overview](#overview)

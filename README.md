@@ -57,4 +57,4 @@ These are configurable rules within Epic that guide how and where medication ord
 
 **NOTE**: The standard work queues that appear on the homepage can vary depending on the user. The work queues that you see aren't necessarily the work queues that a technician sees.
 
-![Willow Prescription Filling Workflow] ("C:\Users\rrajarapu\OneDrive - Care Alliance\RAHUL\WILLOW\Willow_Prescription Fill WorkQueue.jpeg")
+![Willow Prescription Filling Workflow] ("https://github.com/rajarapuraj/Willow-Prescription-Filling-Process/blob/main/Willow_Prescription%20Fill%20WorkQueue.jpeg")
